@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cartas de Cumpleaños</title>
+  <style>
+    body {
+      background-color: #ffe4f2;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: relative;
+    }
+
+    .card-container {
+      width: 200px;
+      height: 260px;
+      perspective: 1000px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .card-container:hover .card {
+      transform: rotateY(180deg) scale(1.05);
+    }
+
+    .card-container:hover {
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-front {
+      background: white;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background: #ffb6c1;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+      font-size: 1em;
+      color: #fff;
+    }
+
+    .back-button-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .back-button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #ff1493;
+      transform: scale(1.05);
+    }
+
+    .boton-sorpresa {
+      padding: 15px 30px;
+      font-size: 30px;
+      font-family: 'Comic Sans MS', cursive;
+      color: #fff;
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 800px;
+    }
+
+    .boton-sorpresa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ff69b4;
+    }
+    .mensaje-especial {
+    max-width: 700px;
+    background: #fff0f5;
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 40px auto;
+    font-size: 1em;
+    color: #444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mensaje-especial h2 {
+    color: #ff1493;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align:center;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="birthday-music" loop>
+    <source src="loca.mp3" type="audio/mpeg" />
+  </audio>
+
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="carta_1.png" alt="Carta 1" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>Eres una mujer extraordinaria, nunca dudes de eso.</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="carta2.jpg" alt= "Carta 2"/>
+      </div>
+      <div class="card-face card-back">
+        <p><b>Si me preguntaran que nombrara una caracteristica sobre ti, sin dudar
+          diria que tu sonrisa perfecta, sonrisa Colgate :)</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="carta3.jpg" alt="Carta 3" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>"En tu día, solo deseo que la vida te devuelva con creces toda la felicidad que das. ¡Feliz cumpleaños!"</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="carta4.jpg" alt="Carta 4" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>"Hoy quiero recordarte lo mucho que vales, lo increíble que eres. Tu forma de ser, 
+          tu corazón generoso y tu capacidad de hacer sentir bien a los demás son un regalo.
+          Espero que este año te traiga nuevas oportunidades, sueños realizados y personas que te quieran como mereces. ¡Feliz cumpleaños Leyling!"</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="ca.jpg" alt="Carta 5" />
+      </div>
+      <div class="card-face card-back">
+        <p><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="ca.jpg" alt="Carta 6" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>Gracias por existir. ¡Feliz cumpleaños tan especial como tú!</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="ca.jpg" alt="Carta 7" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>Gracias por existir. ¡Feliz cumpleaños tan especial como tú!</b></p>
+      </div>
+    </div>
+  </div>
+<div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="ca.jpg" alt="Carta 8" />
+      </div>
+      <div class="card-face card-back">
+        <p><b>Gracias por existir. ¡Feliz cumpleaños tan especial como tú!</b></p>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Botón atrás -->
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">← Atrás</a>
+  </div>
+<div class="mensaje-especial">
+  <h2>🎂 Un Mensaje Especial</h2>
+  <p>
+    Hola,<br><br>
+    Hoy es tu cumpleaños y no quería dejar pasar la oportunidad de escribirte unas palabras. He estado recordando algunos momentos del pasado, y pensé en ti.<br><br>
+    En la secundaria, aunque no hablábamos mucho, fuiste de las pocas personas que realmente se fijó en mí. Y eso, sinceramente, significó mucho. Yo era muy tímido, callado, de los que pasaban desapercibidos. Te tomaste un momento para verme, para saludar, para tratarme con una cercanía que yo no estaba acostumbrado a recibir. Eso nunca lo olvidé.<br><br>
+    Hoy en día, nuestras vidas han tomado rumbos distintos. Cada uno está enfocado en sus propias metas, sueños, batallas y aunque ya no hablamos mucho, hay algo en mí que siempre ha tenido esa curiosidad por conocerte más a fondo. Siempre sentí que detrás de tu energía había una calma muy bonita. Una especie de paz que no todos tienen. Algo en ti transmite tranquilidad, como si tu sola presencia hiciera que todo fuera un poco más liviano, más llevadero. Como si supieras sin decirlo, que estar ahí ya era suficiente para hacer sentir bien a los demás. Con el paso del tiempo, nuestras vidas siguieron caminos distintos. Ahora casi no hablamos, y cada uno está enfocado en lo suyo.<br><br>
+    Me gustaría algún día poder conocerte más como persona, más allá de los recuerdos sueltos y de los saludos esporádicos. Tal vez no pase, tal vez sí. Pero lo que sí sé, es que hoy quiero desearte un feliz cumpleaños con todo el cariño que tengo guardado.<br><br>
+    Que la vida te regale todo eso que mereces: momentos verdaderos, personas que te valoren, y muchas razones para sonreír. Gracias por ser, aunque sea en un pequeño capítulo de mi vida, una presencia tan bonita.<br><br>
+    Con cariño,<br>
+    <strong>Elias</strong>
+  </p>
+</div>
+
+
+ 
+<a href="flor.html" class="boton-sorpresa">🌸<b>Sorpresa</b></a>
+
+<script>
+  const music = document.getElementById("birthday-music");
+
+
+  window.addEventListener("click", () => {
+    music.play().catch(() => {});
+  }, { once: true });
+</script>
+</body>
+</html>

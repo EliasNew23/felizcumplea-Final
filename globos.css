@@ -1,0 +1,13 @@
+.globo {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    animation: subir 7s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes subir {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
