@@ -70,7 +70,6 @@
 
   <h1>Feliz Cumpleaños Aracely</h1>
 
-
   <button id="btn-info">Más Información</button>
 
   <!-- Audio regalo 🎁 -->
@@ -78,6 +77,10 @@
     <source src="regalo.mp3" type="audio/mpeg" />
   </audio>
 
+  
+<audio id="intro-music" autoplay loop>
+  <source src="intro.mp3" type="audio/mpeg">
+</audio>
   <div id="sombreros"></div>
   <div id="globos"></div>
 
@@ -124,5 +127,15 @@
     }
   </script>
 
+<script>
+  const introMusic = document.getElementById("intro-music");
+
+  // Solo se activa con el primer clic
+  window.addEventListener("click", () => {
+    introMusic.play().catch((err) => {
+      console.log("Bloqueado por el navegador, intenta interactuar");
+    });
+  }, { once: true });
+</script>
 </body>
 </html>
