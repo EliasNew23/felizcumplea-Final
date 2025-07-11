@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz Cumpleaños Aracely</title>
+  <link rel="stylesheet" href="globos.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: pink;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4em;
+      color: white;
+      text-shadow: 2px 2px 5px #ff69b4;
+      z-index: 1;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      font-size: 1.2em;
+      padding: 12px 30px;
+      border: none;
+      background-color: #fff;
+      color: #ff69b4;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 1;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #ffe4f2;
+      transform: scale(1.05);
+    }
+
+    .hat {
+      position: absolute;
+      width: 60px;
+      animation: fall 5s linear infinite;
+      top: -100px;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    .globo {
+  position: absolute;
+  animation: subir 7s linear infinite;
+  top: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <h1>Feliz Cumpleaños Aracely</h1>
+
+
+  <button id="btn-info">Más Información</button>
+
+  <!-- Audio regalo 🎁 -->
+  <audio id="regalo-sonido">
+    <source src="regalo.mp3" type="audio/mpeg" />
+  </audio>
+<audio id="intro-music" loop>
+  <source src="intro.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="sombreros"></div>
+
+  <div id="globos"></div>
+
+  <script>
+    const btn = document.getElementById("btn-info");
+    const sonido = document.getElementById("regalo-sonido");
+
+    btn.addEventListener("click", function () {
+      sonido.play(); // Reproduce el sonido del regalo
+
+      // Efecto visual en el botón
+      btn.style.transform = "scale(1.1)";
+      btn.style.backgroundColor = "#ffb6c1";
+
+      // Espera 1.5 segundos antes de redirigir
+      setTimeout(() => {
+        window.location.href = "cartas.html";
+      }, 1500);
+    });
+  </script>
+
+  <script>
+    // Sombreros animados
+    const sombreros = document.getElementById("sombreros");
+    for (let i = 0; i < 20; i++) {
+      const img = document.createElement("img");
+      img.src = "chemms.png";
+      img.className = "hat";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDelay = (Math.random() * 10).toFixed(2) + "s";
+      sombreros.appendChild(img);
+    }
+
+    // Globos animados
+    const globos = document.getElementById("globos");
+    for (let i = 0; i < 15; i++) {
+      const img = document.createElement("img");
+      img.src = "globito.png";
+      img.className = "globo";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDelay = (Math.random() * 10).toFixed(2) + "s";
+      img.style.width = (30 + Math.random() * 30) + "px";
+      globos.appendChild(img);
+    }
+  </script>
+  <script>
+  const introMusic = document.getElementById("intro-music");
+
+  // Solo se activa con el primer clic
+  window.addEventListener("click", () => {
+    introMusic.play().catch((err) => {
+      console.log("Bloqueado por el navegador, intenta interactuar");
+    });
+  }, { once: true });
+</script>
+
+</body>
+</html>

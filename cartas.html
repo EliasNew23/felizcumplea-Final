@@ -113,29 +113,53 @@
       box-shadow: 0 0 15px #ff69b4;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-top: 800px;
+  
+
     }
 
     .boton-sorpresa:hover {
       transform: scale(1.1);
       box-shadow: 0 0 25px #ff69b4;
     }
-    .mensaje-especial {
-    max-width: 700px;
-    background: #fff0f5;
-    border: 2px solid #ffb6c1;
-    border-radius: 15px;
-    padding: 25px;
-    margin: 40px auto;
-    font-size: 1em;
-    color: #444;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  .mensaje-especial {
+  max-width: 700px;
+  background: #fff0f5;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 50px;
+  margin: 100px auto 50px 50px; 
+  font-size: 1em;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+
 
 .mensaje-especial h2 {
     color: #ff1493;
     font-size: 1.5em;
     margin-bottom: 15px;
     text-align:center;
+}
+
+
+.oso-boton-estatico {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+    pointer-events: none;
+    
+}
+
+.oso-imagen {
+  width: 800px;
+  height: auto;
+  margin-bottom: 100px;
+   pointer-events: none;
 }
 
   </style>
@@ -146,6 +170,11 @@
   <audio id="birthday-music" loop>
     <source src="loca.mp3" type="audio/mpeg" />
   </audio>
+  <!-- fondo-->
+<div class="oso-boton-estatico">
+  <img src="peluche.png" alt="Oso de cumpleaños" class="oso-imagen">
+</div>
+
 
 
   <div class="card-container">
@@ -246,7 +275,7 @@ Una mujer muy particular
     
   <!-- Botón atrás -->
   <div class="back-button-container">
-    <a href="index.html" class="back-button">← Atrás</a>
+    <a href="pagina2.html" class="back-button">← Atrás</a>
   </div>
 <div class="mensaje-especial">
   <h2>🎂 Un Mensaje Especial</h2>
